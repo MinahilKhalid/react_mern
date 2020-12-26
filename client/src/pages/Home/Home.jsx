@@ -32,7 +32,7 @@ class Home extends Component {
           Pick your favourite meal and click to place the order:<br></br>
         </h2>
 
-        {products && products.length ? (
+        {/* {products && products.length ? (
           <div className="site-card-wrapper">
             <Row gutter={[16, 24]}>
               {products ? (
@@ -53,7 +53,7 @@ class Home extends Component {
           </div>
         ) : (
           <Empty />
-        )}
+        )} */}
       </>
     );
   }
