@@ -4,7 +4,7 @@ const config = require("config");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-
+var path = require("path");
 const login = require("./authentication/auth");
 const products = require("./routes/api/product");
 const order = require("./routes/api/order");
