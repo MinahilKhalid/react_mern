@@ -12,7 +12,7 @@ const Minimal = ({ children }) => (
         <div className="site-layout-content">{children}</div>
       </Content>
       <Footer style={{ textAlign: "center" }}>
-      The Bagel Shop ©2020 Developed by Hamna Ashraf <i class="fas fa-heart"></i>
+      Usminasara ©2020 Developed by Minahil Khalid <i class="fas fa-heart"></i>
       </Footer>
     </Layout>
   </>
