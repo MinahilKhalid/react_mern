@@ -32,10 +32,10 @@ class Home extends Component {
           Pick your favourite meal and click to place the order:<br></br>
         </h2>
 
-        {/* {products && products.length ? (
+        {products && products.length ? (
           <div className="site-card-wrapper">
             <Row gutter={[16, 24]}>
-              {products ? (
+              {products.length > 0 ? (
                 products.map((product) => {
                   return (
                     <Col span={6} key={product.id}>
@@ -53,7 +53,7 @@ class Home extends Component {
           </div>
         ) : (
           <Empty />
-        )} */}
+        )}
       </>
     );
   }
