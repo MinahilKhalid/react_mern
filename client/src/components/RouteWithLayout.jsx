@@ -9,14 +9,12 @@ const RouteWithLayout = (props) => {
   const { layout: Layout, component: Component, ...rest } = props;
   console.log("Path: ", { ...rest.path });
 
-
   return protectedRoute ? (
     <Route
       {...rest}
       render={(props) => {
         if (!isAuthenticated) return <Redirect to="/" />;
-        // if (userData.user != undefined && userData.user.user_type != "admin") return <Redirect to="/" />;
-        // if (isAuthenticated && { ...rest.path } === "/sign-in") return <Redirect to="/admin" />
+
         return (
           <Layout>
             <Component {...props} />
@@ -28,9 +26,10 @@ const RouteWithLayout = (props) => {
     <Route
       {...rest}
       render={(props) => {
-        // if (isAuthenticated) return <Redirect to="/" />;
-        if (userData.user != undefined && userData.user.user_type === "admin") return <Redirect to="/admin" />
-        if (isAuthenticated && { ...rest }.path === "/sign-in") return <Redirect to="/" />
+        if (userData.user != undefined && userData.user.user_type === "admin")
+          return <Redirect to="/admin" />;
+        if (isAuthenticated && { ...rest }.path === "/sign-in")
+          return <Redirect to="/" />;
         return (
           <Layout>
             <Component {...props} />

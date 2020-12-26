@@ -2,7 +2,6 @@ import React from "react";
 import { Card as AntCard } from "antd";
 const { Meta } = AntCard;
 const Card = (props) => {
-
   const { name, price, img, id } = props.product;
   return (
     <>

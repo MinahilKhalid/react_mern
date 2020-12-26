@@ -65,7 +65,7 @@ class Products extends Component {
       .delete(`${process.env.REACT_APP_API_URL}/products/${id}`)
       .then((res) => {
         this.setState({ deleted: true });
-        message.success('Product Deleted!');
+        message.success("Product Deleted!");
       })
       .catch((err) => {
         console.log("Products API Error: ", err);
@@ -75,8 +75,6 @@ class Products extends Component {
   render() {
     const { columns, deletedIndex, deleted } = this.state;
     const { products } = this.context;
-
-    // const rowData = {products && products.length ? ;
 
     return (
       <>

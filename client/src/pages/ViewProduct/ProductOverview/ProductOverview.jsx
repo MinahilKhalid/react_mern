@@ -1,13 +1,5 @@
 import React, { Component } from "react";
-import {
-  Row,
-  Col,
-  List,
-  Input,
-  Button,
-  Divider,
-  message,
-} from "antd";
+import { Row, Col, List, Input, Button, Divider, message } from "antd";
 import "./ProductOverview.css";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
@@ -37,19 +29,17 @@ class ProductOverview extends Component {
       number: product.id,
       price: product.price,
       status: "pending",
-      date: new Date().toISOString().slice(0, 19).replace('T', ' ')
+      date: new Date().toISOString().slice(0, 19).replace("T", " "),
     };
     axios
-    .post(`${process.env.REACT_APP_API_URL}/order`, order)
-    .then((res) => {
-      message.success('Order Created!');
-      this.setState({receipt: res.data})
- 
-
-    })
-    .catch((err) => {
-      console.log("Products API Error: ", err);
-    });
+      .post(`${process.env.REACT_APP_API_URL}/order`, order)
+      .then((res) => {
+        message.success("Order Created!");
+        this.setState({ receipt: res.data });
+      })
+      .catch((err) => {
+        console.log("Products API Error: ", err);
+      });
 
     this.setState({ cartButtonValidation: true });
 
@@ -65,7 +55,7 @@ class ProductOverview extends Component {
       <div className="overview-content">
         <List>
           {cartButtonValidation ? (
-            <Receipt receipt={this.state.receipt}/>
+            <Receipt receipt={this.state.receipt} />
           ) : (
             <div>
               <List.Item style={{ borderBottom: 0 }}>
@@ -77,24 +67,18 @@ class ProductOverview extends Component {
               <Divider />
               <List.Item style={{ borderBottom: 0 }}>
                 <div className="content-quantity-title">
-                <strong>Ingredients : </strong>{product.ingredients}
+                  <strong>Ingredients : </strong>
+                  {product.ingredients}
                 </div>
               </List.Item>
               <List.Item style={{ borderBottom: 0 }}>
                 <div className="content-quantity-title">
-                  <strong>Meal : </strong>{product.mealType}
+                  <strong>Meal : </strong>
+                  {product.mealType}
                 </div>
               </List.Item>
               <List.Item style={{ borderBottom: 0 }}>
-                Nutrition Fact: {" "}
-                <div className="content-quantity-title">
-                  {/* {
-                    Object.keys(product.nutritionFacts).find(carbohydrate=>
-                      (console.log(`key:${nutritionFacts[carbohydrate]} value:${value}`))
-                    )
-                  } */}
-                </div>
-
+                Nutrition Fact: <div className="content-quantity-title"></div>
               </List.Item>
               <Row justify="space-between">
                 <Col span={12}>
