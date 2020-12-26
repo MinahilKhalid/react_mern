@@ -1,0 +1,67 @@
+/* --------- View Product Content CSS  -------------- */
+
+.overview-content {
+  text-align: left;
+  padding: 5px 70px;
+}
+
+.content-title {
+  font-size: 1.7rem;
+}
+.content-price {
+  margin-top: 12px;
+  font-size: 1.3rem;
+  color: #ff4b3bc4;
+}
+
+
+.ant-divider-horizontal {
+  margin: 12px 0 !important;
+}
+
+.ant-btn[disabled],
+.ant-btn[disabled].active,
+.ant-btn[disabled]:active,
+.ant-btn[disabled]:focus,
+.ant-btn[disabled]:hover {
+  background-color: #32cd32 !important;
+}
+.content-quantity-title {
+  font-size: 1rem;
+}
+.content-quantity-title span {
+  font-size: 0.8rem;
+}
+
+.content-cart-button {
+  margin-right: 10px;
+}
+
+.ant-radio-button-wrapper {
+  padding: 0 15px !important;
+  background: #f8f8f8 !important;
+}
+
+.ant-btn-disabled,
+.ant-btn-disabled.active,
+.ant-btn-disabled:active,
+.ant-btn-disabled:focus,
+.ant-btn-disabled:hover,
+.ant-btn.disabled,
+.ant-btn.disabled.active,
+.ant-btn.disabled:active,
+.ant-btn.disabled:focus,
+.ant-btn.disabled:hover,
+.ant-btn[disabled],
+.ant-btn[disabled].active,
+.ant-btn[disabled]:active,
+.ant-btn[disabled]:focus,
+.ant-btn[disabled]:hover {
+  background-color: #f8f8f8 !important;
+}
+
+.ant-btn:focus,
+.ant-btn:hover {
+  color: #FFF !important;
+  border-color: #FFF !important;
+}

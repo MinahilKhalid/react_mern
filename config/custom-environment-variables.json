@@ -1,0 +1,4 @@
+{
+  "jwtPrivateKey": "myBagelShop_jwtPrivateKey",
+  "db": "myBagelShop_db"
+}
