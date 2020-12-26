@@ -41,10 +41,13 @@ app.get("*", (req, res) => {
 });
 
 mongoose
-  .connect(process.env.myBagelShop_db || config.get("db"), {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(
+    "mongodb+srv://minahil123:minahil123@cluster0.1yfgu.mongodb.net/<dbname>?retryWrites=true&w=majority",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  )
   .then(() => console.log("Connected to Mongo...."))
   .catch((error) => console.log(error.message));
 
