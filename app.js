@@ -42,7 +42,7 @@ app.get("*", (req, res) => {
 
 mongoose
   .connect(
-    "mongodb+srv://minahil123:minahil123@cluster0.1yfgu.mongodb.net/<dbname>?retryWrites=true&w=majority",
+    "mongodb+srv://minahil123:minahil123@cluster0.1yfgu.mongodb.net/bagelShop?retryWrites=true&w=majority",
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
