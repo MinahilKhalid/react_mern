@@ -27,7 +27,7 @@ class SignIn extends Component {
         password: values.password,
       };
       axios
-        .post(`${process.env.REACT_APP_API_URL}/login`, body)
+        .post("http://localhost:4000/api/login", body)
         .then((res) => {
           localStorage.setItem("api-auth-token", res.data.token);
           setIsAuthenticated(true);
