@@ -4,6 +4,23 @@ const config = require("config");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const corsOptions = {
+  //these are the headres allowed
+  allowedHeaders: [
+    "Origin",
+    "X-Requested-With",
+    "Content-Type",
+    "Accept",
+    "X-Access-Token",
+    "Authorization",
+    "x-auth-token", //this header is sent by react if user is logged in
+  ],
+  credentials: true,
+  methods: "GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE",
+  //origin: "http://ec2-18-224-94-239.us-east-2.compute.amazonaws.com",
+  origin: "http://localhost:3000",
+  preflightContinue: false,
+};
 var path = require("path");
 const login = require("./authentication/auth");
 const products = require("./routes/api/product");
@@ -20,7 +37,7 @@ const port = process.env.PORT || 4000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use(cors({ credentials: true, origin: true }));
+//app.use(cors({ credentials: true, origin: true }));
 
 app.listen(port, () => {
   console.log("Listening at port `${port}`");
