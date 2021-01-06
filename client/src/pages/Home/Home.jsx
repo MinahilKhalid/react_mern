@@ -12,7 +12,7 @@ class Home extends Component {
   }
   componentDidMount() {
     axios
-      .get("http://localhost:4000/api/products")
+      .get("https://heruko-react.herokuapp.com/api/products")
       .then((res) => {
         this.setState({ products: res.data });
       })
