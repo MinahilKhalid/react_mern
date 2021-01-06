@@ -15,11 +15,7 @@ class SignIn extends Component {
   static contextType = UserContext;
 
   render() {
-    const {
-      userData,
-      setUserData,
-      setIsAuthenticated,
-    } = this.context;
+    const { userData, setUserData, setIsAuthenticated } = this.context;
 
     const onFinish = (values) => {
       const body = {
@@ -27,7 +23,7 @@ class SignIn extends Component {
         password: values.password,
       };
       axios
-        .post("http://localhost:4000/api/login", body)
+        .post("https://heruko-react.herokuapp.com/api/login", body)
         .then((res) => {
           localStorage.setItem("api-auth-token", res.data.token);
           setIsAuthenticated(true);
@@ -35,12 +31,11 @@ class SignIn extends Component {
             token: res.data.token,
             user: res.data.user,
           });
-          if(res.data.user.user_type === "admin") {
-            this.props.history.push("/admin")
+          if (res.data.user.user_type === "admin") {
+            this.props.history.push("/admin");
           } else {
-            this.props.history.push("/")
+            this.props.history.push("/");
           }
-         
         })
         .catch((err) => {
           console.log("Products API Error: ", err);

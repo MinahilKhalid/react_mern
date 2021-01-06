@@ -19,9 +19,9 @@ class AddProduct extends Component {
         ingredients: values.ingredients,
       };
       axios
-        .post(`${process.env.REACT_APP_API_URL}/products`, body)
+        .post(`https://heruko-react.herokuapp.com/products`, body)
         .then((res) => {
-          message.success('Product Added!');
+          message.success("Product Added!");
         })
         .catch((err) => {
           console.log("Products API Error: ", err);
@@ -106,7 +106,14 @@ class AddProduct extends Component {
               <Input />
             </Form.Item>
           </Form>
-          <Button form="myForm" onClick={() => this.props.setModalVisible(false)} style={{float: "right", margin: "35px 5px"}} type="primary" key="submit" htmlType="submit">
+          <Button
+            form="myForm"
+            onClick={() => this.props.setModalVisible(false)}
+            style={{ float: "right", margin: "35px 5px" }}
+            type="primary"
+            key="submit"
+            htmlType="submit"
+          >
             Add Product
           </Button>
         </Modal>

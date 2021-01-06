@@ -62,7 +62,7 @@ class Products extends Component {
   handleDelete = (index, id) => {
     this.setState({ deletedIndex: index });
     axios
-      .delete(`${process.env.REACT_APP_API_URL}/products/${id}`)
+      .delete(`https://heruko-react.herokuapp.com/products/${id}`)
       .then((res) => {
         this.setState({ deleted: true });
         message.success("Product Deleted!");

@@ -51,7 +51,7 @@ class Orders extends Component {
   apiCall = () => {
     const { setProducts } = this.context;
     return axios
-      .get(`${process.env.REACT_APP_API_URL}/order`)
+      .get(`https://heruko-react.herokuapp.com/order`)
       .then((res) => {
         this.setState({ orders: res.data });
       })
@@ -78,7 +78,6 @@ class Orders extends Component {
 
   render() {
     const { columns, deletedIndex, orders } = this.state;
-
 
     // const rowData = {products && products.length ? ;
 

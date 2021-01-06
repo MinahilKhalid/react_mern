@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from 'axios';
+import axios from "axios";
 import { Row, Col, Tabs, List, Empty, Layout } from "antd";
 import Magnifier from "react-magnifier";
 import ProductOverview from "./ProductOverview/ProductOverview";
@@ -16,7 +16,7 @@ class ViewProduct extends Component {
   }
   componentDidMount() {
     axios
-      .get(`${process.env.REACT_APP_API_URL}/products`)
+      .get(`https://heruko-react.herokuapp.com/products`)
       .then((res) => {
         if (res.data && res.data.length) {
           res.data.forEach((product) => {
@@ -47,7 +47,14 @@ class ViewProduct extends Component {
               >
                 <Row>
                   <Col
-                    key="Image" xxl={6} xl={6} lg={6} md={14}sm={16}xs={15}>
+                    key="Image"
+                    xxl={6}
+                    xl={6}
+                    lg={6}
+                    md={14}
+                    sm={16}
+                    xs={15}
+                  >
                     <div className="product-list" style={{ marginTop: "5px" }}>
                       <div className="img-magnifier">
                         <Magnifier
@@ -62,7 +69,14 @@ class ViewProduct extends Component {
                     </div>
                   </Col>
                   <Col
-                    key="content"xxl={10}xl={14} lg={14} md={24} sm={24}xs={24}>
+                    key="content"
+                    xxl={10}
+                    xl={14}
+                    lg={14}
+                    md={24}
+                    sm={24}
+                    xs={24}
+                  >
                     <ProductOverview product={selectedProduct} />
                   </Col>
                 </Row>
