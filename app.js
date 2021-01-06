@@ -18,7 +18,7 @@ const corsOptions = {
   credentials: true,
   methods: "GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE",
   //origin: "http://ec2-18-224-94-239.us-east-2.compute.amazonaws.com",
-  origin: "https://heruko-react.herokuapp.com",
+  origin: "*",
   preflightContinue: false,
 };
 var path = require("path");
@@ -55,6 +55,18 @@ app.use(express.static(path.join(__dirname, "client/build")));
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "/client/build/index.html"));
+});
+
+app.use(function (req, res, next) {
+  res.header(
+    "Access-Control-Allow-Origin",
+    "https://heruko-react.herokuapp.com"
+  );
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
 });
 
 mongoose
